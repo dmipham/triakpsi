@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     @users = User.all
     
 		@users.each do |user|
-      @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d/%y") if user.birthday.month == Date.today.month
+      @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d") if user.birthday.month == Date.today.month
 		end
 
   end
