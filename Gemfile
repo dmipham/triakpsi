@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 gem 'event-calendar', :require => 'event_calendar'
 
-gem 'unicorn'
+gem 'heroku'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
