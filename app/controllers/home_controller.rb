@@ -6,5 +6,12 @@ class HomeController < ApplicationController
     @shown_month = Date.civil(@year, @month)
 
     @event_strips = Event.event_strips_for_month(@shown_month)
+    
+    @users = User.all
+    
+		@users.each do |user|
+      @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d/%y") if user.birthday.month == Date.today.month
+		end
+
   end
 end
