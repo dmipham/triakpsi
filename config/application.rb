@@ -58,5 +58,9 @@ module Demo
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Heroku precompile assets setting
+    config.assets.initialize_on_precompile = false
+    
   end
 end
