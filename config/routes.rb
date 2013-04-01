@@ -26,6 +26,8 @@ Demo::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  
+  resources :users
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -53,6 +55,8 @@ Demo::Application.routes.draw do
   root :to => 'home#index'
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  
+  match 'join' => 'user#join'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
