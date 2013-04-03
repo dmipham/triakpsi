@@ -16,7 +16,7 @@
 	</div>
 	
 <div class="container">
-	<div class="navbar">
+	<!-- <div class="navbar">
 		<div class="navbar-inner pull-left">
 			<ul class="nav">
 				<li class="active"><a href="#">Home</a></li>
@@ -24,17 +24,31 @@
 				<li><a href="http://localhost:3000/join/">Join</a></li>
 				<li><a href="#">Login</a></li>
 			</ul>
-			</div>
+			</div> -->
 		<form class="form-inline pull-right">
 			<input type="text" class="input-small" placeholder="Email">
 			<input type="password" class="input-small" placeholder="Password">
 			<button type="submit" class="btn" style="margin-top:0px">Sign In</button>
+			<a href="http://localhost:3000/join/">Join</a>
 		</form>
-	</div>
+	<!-- </div> -->
 </div>
 
 
 <%= yield %>
 
 </body>
+<div class="footer">
+	<div class="container">
+	
+		<div class="row-fluid" style="height:20px">
+		</div>
+
+		Triangle AKPsi &copy; 2011-<%= Date.today.strftime("%Y") %>
+	
+		<div class="row-fluid" style="height:20px">
+		</div>
+
+	</div>
+</div>
 </html>
