@@ -13,6 +13,7 @@ class HomeController < ApplicationController
       @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d") if user.birthday.month == Date.today.month
 	
     @new_member = user.first_name+" "+user.last_name+", "+user.school+" "+user.pledge_semester+" "+user.pledge_year.to_s if User.find(:all, :order => "id desc", :limit => 5).reverse
+  
   	end
 
   end

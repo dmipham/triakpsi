@@ -1,4 +1,6 @@
 Demo::Application.routes.draw do
+  devise_for :users
+
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   # The priority is based upon order of creation:
@@ -26,8 +28,6 @@ Demo::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  
-  resources :users
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -62,4 +62,6 @@ Demo::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+  # devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
 end
