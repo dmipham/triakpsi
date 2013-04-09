@@ -1,0 +1,37 @@
+
+
+			<%= form_for(@event) do |f| %>
+  		  	<% if @event.errors.any? %>
+  			  <div id="error_explanation">
+    			  <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    			  <ul>
+     				 <% @event.errors.full_messages.each do |msg| %>
+    				 <li><%= msg %></li>
+    				 <% end %>
+   				 </ul>
+   		  		</div>
+ 	  		  <% end %>
+
+  			<p>
+  			  <%= f.text_field :name, :placeholder => "Event Name" %>
+			  <%= f.select :host, ['Triangle AKPsi', 'NCSU', 'UNC'] %>
+				<label>Feel free to provide a link to registration/tickets/more info.</label>
+				<%= f.text_field :link, :placeholder => "Website" %>
+			</p>
+			<p>
+				<%= f.text_area :description, :placeholder => "Event Description"%>
+			</p>
+  		  	<p>
+				<label>Start Date and Time</label>
+  				<%= f.datetime_select :start_at, :order => [:month, :day, :year, :hour, :minute], :ampm => true %>
+			</p>
+ 		   	<p>
+				<label>End Date and Time</label>
+  		   		<%= f.datetime_select :end_at, :order => [:month, :day, :year, :hour, :minute], :ampm => true  %>
+			</p>
+  		  	<div class="actions">
+   			 <%= f.submit "Add Event" %>
+ 			</div>
+			<% end %>
+

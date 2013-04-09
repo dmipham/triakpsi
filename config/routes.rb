@@ -1,4 +1,6 @@
 Demo::Application.routes.draw do
+  resources :events
+  
   devise_for :users
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
@@ -34,6 +36,12 @@ Demo::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+   
+   # resources :calendar do
+ #       collection do
+ #         get :add
+ #       end
+ #   end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
@@ -56,7 +64,11 @@ Demo::Application.routes.draw do
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   
-  match 'join' => 'users#join'
+  match 'directory' => 'dashboard#directory'
+  
+  match 'dashboard' => 'dashboard#index'
+  
+  match 'event' => 'calendar#add'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
