@@ -1,0 +1,69 @@
+<div class="container">
+	<div class="row-fluid">
+
+			<%= render "side_nav" %>
+
+		<div class="span10">
+			<h3><%= @member.first_name+" "+@member.last_name %></h3>
+			
+			<legend>Basic Info</legend>	
+			<p>
+			  <b>Email:</b>
+			  <%= @member.email%>
+			</p>
+			
+			<p>
+			  <b>Phone:</b>
+			  <%= @member.phone %>
+			</p>
+			
+			<p>
+			  <b>Birthday:</b>
+			  <%= @member.birthday.strftime("%b %-d, %Y") %>
+			</p>
+			
+			<p>
+			  <b>LinkedIn:</b>
+			  <%= @member.linkedin %>
+			</p>
+			
+			<p>
+			  <b>Twitter:</b>
+			  <%= @member.twitter%>
+			</p>
+			
+			<p>
+			  <b>Website:</b>
+			  <%= @member.website%>
+			</p>
+
+			<legend>School Info</legend>
+			<p>
+			  <b>School:</b>
+			  <%= @member.school+" c/o "+@member.grad_year.to_s %>
+			</p>
+
+			<p>
+			  <b>Pledged:</b>
+			  <%= @member.pledge_semester+" "+@member.pledge_year.to_s %>
+			</p>
+			
+			<legend>Professional Info</legend>
+			<p>
+			  <b>Industry:</b>
+			  <%= @member.industry %>
+			</p>
+			
+			<p>
+			  <b>Company:</b>
+			  <%= @member.company %>
+			</p>
+			
+			<p>
+			  <b>Current Position:</b>
+			  <%= @member.job_title %>
+			</p>
+			
+		</div>
+	</div>
+</div>

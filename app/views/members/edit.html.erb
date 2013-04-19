@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row-fluid">
+
+			<%= render "side_nav" %>
+
+		<div class="span10">
+			<h1>Update Info</h1>
+			
+				<%= form_for @member, :url => url_for(:controller => 'members', :action => 'update') do |f| %>
+				
+				<legend>Professional Info</legend>
+					<label>Industry</label>
+					<%= f.text_field :industry %>
+					<label>Company</label>
+					<%= f.text_field :company %>
+					<label>Job Title</label>
+					<%= f.text_field :job_title%>
+			
+			<legend>Contact Info</legend>
+				<label>Phone</label>
+				<%= f.text_field :phone %>
+				<label>LinkedIn</label>
+				<%= f.text_field :linkedin %>
+				<label>Twitter</label>
+				<%= f.text_field :twitter %>
+				<label>Website</label>
+				<%= f.text_field :website %>
+				
+				<div><%= f.submit "Update" %></div>
+			
+			<% end %>
+		
+		</div>
+	</div>
+</div>

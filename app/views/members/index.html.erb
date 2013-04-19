@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row-fluid">
+
+			<%= render "side_nav" %>
+
+		<div class="span10">
+			<h3>Members Directory</h3>
+			
+			<table class="table">
+			  <tr>
+			    <th>Name</th>
+			    <th>Company</th>
+				<th>Job</th>
+			    <th>School</th>
+			    <th>Pledge</th>
+			    <th></th>
+			  </tr>
+
+			<% @members.each do |member| %>
+			  <tr>
+			    <td><%= member.first_name %> <%= member.last_name %></td>
+			    <td><%= member.company %></td>
+				<td><%= member.job_title %></td>
+			    <td><%= member.school %> c/o <%= member.grad_year %></td>
+			    <td><%= member.pledge_semester %> <%= member.pledge_year %></td>
+			    <td><%= link_to 'Contact', member_path(member) %></td>
+			  </tr>
+			<% end %>
+			</table>
+			
+		</div>
+	</div>
+</div>
