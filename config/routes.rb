@@ -3,6 +3,8 @@ Demo::Application.routes.draw do
   
   resources :members
   
+  resources :charges
+  
   devise_for :users
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}

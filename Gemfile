@@ -32,6 +32,8 @@ gem 'event-calendar', :require => 'event_calendar'
 
 gem 'devise'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
