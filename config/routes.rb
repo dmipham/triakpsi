@@ -5,11 +5,7 @@ Demo::Application.routes.draw do
   
   resources :charges
   
-  devise_for :users
-  
-  namespace :user do
-      root :to => "charges#new"
-    end
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
