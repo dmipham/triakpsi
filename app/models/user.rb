@@ -13,8 +13,10 @@ class User < ActiveRecord::Base
     update_attributes(:stripe => customer_id)
   end
   
-  def get_stripe_customer_id(customer_id)
-    get_attributes(:stripe => customer_id)
-  end
+  protected
+
+   def after_sign_up_path_for(resource)
+     new_charge_path
+   end
   
 end

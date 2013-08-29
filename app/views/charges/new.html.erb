@@ -5,10 +5,10 @@
       <span>1-Year Membership: $25.00</span>
     </label>
   </article>
-
+	<p>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-key='pk_test_1kKGlAn0QjyrU1CBG8vsVp3u'
           data-description="1 Year Membership"
-          data-amount="2500"></script>
+          data-plan="dues"></script>
 <% end %>
 </div>
