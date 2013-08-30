@@ -33,6 +33,7 @@
 			<div class="pull-right">
 				<%= link_to "Members", members_path %> |
 				<%= link_to "Events", events_path %> | 
+				<%= link_to "Job Board", jobs_path %> | 
 				<%= link_to "Log out", destroy_user_session_path, {:method => "DELETE"} %>
 			</div>
 		<%else%>
@@ -54,7 +55,8 @@
 		<div class="row-fluid" style="height:20px">
 		</div>
 
-		Copyright &copy; 2011-<%= Date.today.strftime("%Y") %> Triangle AKPsi
+		<p style="float: left;">Copyright &copy; 2011-<%= Date.today.strftime("%Y") %> Triangle AKPsi<p>
+			<p style="float: right;">Site built by <a href="http://www.diemmipham.com/", target="_blank">Diemmi Pham</a>
 	
 		<div class="row-fluid" style="height:20px">
 		</div>

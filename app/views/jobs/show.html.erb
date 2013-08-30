@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row-fluid">
+		
+		<%= render "side_nav" %>
+
+		<div class="span10">
+			
+			<table>
+				<tr>
+					<td><b>Position:</b></td>
+					<td><%= @job.position %></td>
+				</tr>
+				<tr>
+					<td><b>Company:</b></td>
+					<td><%= @job.company %></td>
+				</tr>
+				<tr>
+					<td><b>Industry:</b></td>
+					<td><%= @job.industry %></td>
+				</tr>
+				<tr>
+					<td><b>Location:</b></td>
+					<td><%= @job.location %></td>
+				</tr>
+				<tr>
+					<td style= "padding-right: 10px;" ><b>Compensation:</b></td>
+					<td>$<%= number_with_delimiter(@job.compensation, :delimiter => ",") %></td>
+				</tr>
+				<tr>
+					<td><b>Description:</b></td>
+					<td><%= @job.description %></td>
+				</tr>
+				<tr>
+					<td><b>Posted on:</b></td>
+					<td><%= @job.created_at.strftime("%D") %></td>
+				</tr>
+			</table>
+			
+		</div>
+	</div>
+</div>

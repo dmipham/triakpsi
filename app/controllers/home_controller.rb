@@ -9,12 +9,13 @@ class HomeController < ApplicationController
     
     @users = User.all
     
-		@users.each do |user|
+	  @users.each do |user|
       @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d") if user.birthday.month == Date.today.month
-	
-    @new_members = User.find(:all, :order => "id desc", :limit => 5)
-  
-  	end
+    end
+    
+    @new_members = User.find(:all, :order => "id desc", :limit => 10)
+    
+    @jobs = Job.find(:all, :order => "id desc", :limit => 10)
 
   end
 end

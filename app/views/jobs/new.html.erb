@@ -1,0 +1,18 @@
+<div class="container">
+	
+	<%= form_for(@job) do |f| %>
+	<div><%= f.text_field :position , :placeholder => "Title of position" %></div>
+	<div><%= f.text_field :company, :placeholder => "Company" %></div>
+	<div><%= f.text_field :website, :placeholder => "Website" %></div>
+	<div><%= f.select :industry, ['Industry', 'Accounting', 'Banking/Mortgage', 'Entrepreneurship','Financial Services', 'Human Resources/HR', 'Investment Banking/Venture', 'Investment Management/Hedge Fund/Private Equity','Management Consulting', 'Market Research', 'Marketing/Advertising', 'Public Relations/PR', 'Sales', 'Venture Capital/VC', 'Other' ] %></div>
+	<div><%= f.text_field :location, :placeholder => "City, State" %></div>
+	<div><%= f.text_area :description, :placeholder => "Please describe the position and requirements you're looking for in potential candidates" %></div>
+	<div><%= f.text_field :compensation, :placeholder => "Compensation" %></div>
+	
+	<div><%= f.submit "Post Position" %></div>
+	
+	<% end %>
+	<p><p>
+	<b>Note:</b> All positions are automatically removed after 3 months from the post date.
+	
+</div>

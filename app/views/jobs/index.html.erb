@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row-fluid">
+		
+		<%= render "side_nav" %>
+
+		<div class="span10">
+			<h3>Job Board</h3>
+			
+			<table class="table">
+			  <tr>
+			    <th>Position</th>
+			    <th>Company</th>
+					<th>Industry</th>
+					<th>Location</th>
+			    <th>Compensation</th>
+			    <th></th>
+			  </tr>
+
+			<% @jobs.each do |job| %>
+			  <tr>
+			    <td><%= job.position %></td>
+			    <td><%= job.company %></td>
+					<td><%= job.industry %></td>
+					<td><%= job.location %></td>
+			    <td>$<%= number_with_delimiter(job.compensation, :delimiter => ',') %></td>
+			    <td><%= link_to 'More Info', job_path(job) %></td>
+			  </tr>
+			<% end %>
+			</table>
+			
+		</div>
+	</div>
+</div>
