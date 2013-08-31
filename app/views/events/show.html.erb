@@ -12,13 +12,18 @@
 </p>
 
 <p>
-  <b>Start at:</b>
-  <%= @event.start_at %>
+  <b>Date:</b>
+  <%= @event.start_at.strftime("%A %b %d, %Y") %>
 </p>
 
 <p>
-  <b>End at:</b>
-  <%= @event.end_at %>
+  <b>Time</b>
+  <%= @event.start_at.strftime("%l:%M") %> - <%= @event.end_at.strftime("%l:%M %p") %>
+</p>
+
+<p>
+	<b>Description:</b>
+	<%= @event.description %>
 </p>
 
 

@@ -13,9 +13,23 @@ class HomeController < ApplicationController
       @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d") if user.birthday.month == Date.today.month
     end
     
-    @new_members = User.find(:all, :order => "id desc", :limit => 10)
+    @new_members = User.find(:all, :order => "id desc", :limit => 5)
     
-    @jobs = Job.find(:all, :order => "id desc", :limit => 10)
+    @jobs = Job.find(:all, :order => "id desc", :limit => 5)
+    
+    Instagram.configure do |config|
+      config.client_id = '7060c6e0ad2c45a1866f2bdffa08ed39'
+      config.access_token = '252651791.7060c6e.e99f88deb09943cc9eb0cb9512905e82'
+    end
+    
+    @ig_pics = Instagram.user_recent_media(252651791)
+    
+    @links = Array.new
+    
+    @ig_pics.take(5).each do |i|
+      link = i[:images][:low_resolution].url
+      @links.push(link)
+    end
 
   end
 end

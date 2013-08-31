@@ -4,7 +4,7 @@
 		<div class="span8" style="border: 2px solid; border-color:#fff; border-radius:25px; height:300px; background-color:#fff;">
 			<h4>About Us</h4>
 			<p>
-				Triangle AKPsi is the Alumni Chapter of Alpha Kappa Psi Professional Business Fraternity. We serve RTP and surrounding areas in North Carolina. The chapter was established in 2011 and have been growing ever since. Our mission is to give our alumni an opportunity to stay active with the Fraternity after graduation. We strive to offer the same benefits and opportunities to our members that Brothers enjoyed as a student including:
+				Triangle AKPsi is the Alumni Chapter of Alpha Kappa Psi Professional Business Fraternity. We serve RTP and surrounding areas in North Carolina. The chapter was established in 2011 and have been growing ever since. Our mission is to give our alumni an opportunity to stay active with the Fraternity after graduation. We strive to offer the same benefits and opportunities to our members that Brothers enjoyed as students including:
 				<ul>
 					<li>Professional Development</li>
 					<li>Networking and Social Activities</li>
@@ -13,7 +13,7 @@
 				</ul>
 				We welcome all new members and would love to see you at our next event!
 				<p></P><center>
-					<a href="http://www.twitter.com/triangleakpsi", target="_blank">Twitter</a> | <a href="http://www.facebook.com/triangleakpsi", target="_blank">Facebook</a> | <a href="http://www.linkedin.com/groups/Triangle-AKPsi-4001716?gid=4001716&mostPopular=&trk=tyah", target="_blank">LinkedIn</a>
+					<a href="http://www.twitter.com/triangleakpsi", target="_blank">Twitter</a> | <a href="http://www.facebook.com/triangleakpsi", target="_blank">Facebook</a> | <a href="http://www.linkedin.com/groups/Triangle-AKPsi-4001716?gid=4001716&mostPopular=&trk=tyah", target="_blank">LinkedIn</a> | <a href="http://www.instagram.com/triangleakpsi", target="_blank">Instagram</a>
 				</center>
 		</div>
 	
@@ -30,26 +30,50 @@
 	</div>
 	
 	<div class="row-fluid">
-		<div class="span4" style="border: 2px solid; border-color:#999; border-radius:25px; height:300px;">
-			<center><h4>Happy Birthday <%=Date.today.strftime("%B") %> Babies!</h4></center>
-			<ul>
-				<li><%= @birthdays %></li>
-			</ul>
+		<div class="span4">
+			<script type="text/javascript">
+			$(function(){
+			     $("#myCarousel").carousel({interval: 5000});
+			});
+			</script>
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="item">
+			    	<%= image_tag("#{@links[4]}", :alt => "Triangle AKPsi") %>
+					</div>
+					<div class="item active">
+						<%= image_tag("#{@links[3]}", :alt => "Triangle AKPsi") %>
+					</div>
+					<div class="item">
+						<%= image_tag("#{@links[2]}", :alt => "Triangle AKPsi") %>
+					</div>
+					<div class="item">
+						<%= image_tag("#{@links[1]}", :alt => "Triangle AKPsi") %>
+					</div>
+					<div class="item">
+						<%= image_tag("#{@links[0]}", :alt => "Triangle AKPsi") %>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="span4" style="border: 2px solid; border-color:#999; border-radius:25px; height:300px;">
-			<center><h4>Job Board</h4></center>
-			<ul><% @jobs.each do |job| %>
-				<li><%= job.position + " in " + job.location  rescue "n/a" %> <%= link_to "More Info", job_path(job) %></li>
-				<% end %></ul>
+		<div class="span4">
+			<center><h4>AKΨ is Hiring!</h4></center>
+			<table>
+				<% @jobs.each do |job| %>
+				<tr>
+					<td style="padding-left: 20px"><b><%= link_to "#{job.position rescue "n/a"}", job_path(job) %></b> in <%= job.location %></td>
+				</tr>
+				<% end %>
+			</table>
 				<p>
-					<%= link_to "Post Position"%>
+					<p style="padding-left: 20px"><%= link_to "Post Position"%></p>
 		</div>
 		
-		<div class="span4" style="border: 2px solid; border-radius:25px; height:300px;">
+		<div class="span4">
 			<center><h4>Welcome New Members:</h4></center>
-			<ul><% @new_members.each do |user| %>
-			<li><%= user.first_name+" "+user.last_name+" "+user.school+" "+user.pledge_semester+" "+user.pledge_year.to_s %></li>
-			<%end%></ul>
+			<% @new_members.each do |user| %>
+			<ul><%= user.first_name+" "+user.last_name+" "+user.school+" "+user.pledge_semester+" "+user.pledge_year.to_s %></ul>
+			<%end%>
 		</div>
 		
 	</div>
