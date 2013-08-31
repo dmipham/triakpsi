@@ -4,7 +4,7 @@
 			<%= render "side_nav" %>
 
 		<div class="span10">
-<h1>Upcoming Events</h1>
+<h3>Upcoming Events</h3>
 
 <table class="table">
   <tr>
@@ -12,8 +12,6 @@
 	<th>Host</th>
     <th>Date</th>
 	<th>Time</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -23,9 +21,7 @@
 	<td><%= event.host %></td>
     <td><%= event.start_at.strftime("%a, %-m/%d/%Y") %></td>
 	<td><%= event.start_at.strftime("%l:%M")%> - <%= event.end_at.strftime("%l:%M %p")%></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Details', event %></td>
   </tr>
 <% end %>
 </table>

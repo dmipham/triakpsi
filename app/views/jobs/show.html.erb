@@ -4,7 +4,7 @@
 		<%= render "side_nav" %>
 
 		<div class="span10">
-			
+			<legend>Position Details</legend>
 			<table>
 				<tr>
 					<td><b>Position:</b></td>
@@ -23,10 +23,6 @@
 					<td><%= @job.location %></td>
 				</tr>
 				<tr>
-					<td style= "padding-right: 10px;" ><b>Compensation:</b></td>
-					<td>$<%= number_with_delimiter(@job.compensation, :delimiter => ",") %></td>
-				</tr>
-				<tr>
 					<td><b>Description:</b></td>
 					<td><%= @job.description %></td>
 				</tr>
@@ -35,6 +31,15 @@
 					<td><%= @job.created_at.strftime("%D") %></td>
 				</tr>
 			</table>
+			
+			<p><p>
+				
+			<legend>Contact Info</legend>
+			
+			<%= @job.contact_name %><p>
+			<%= @job.contact_position %><p>
+			<%= @job.contact_company %><p>
+			<%= mail_to @job.contact_email, "Email" %>
 			
 		</div>
 	</div>

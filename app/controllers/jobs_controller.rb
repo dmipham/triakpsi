@@ -2,11 +2,17 @@ class JobsController < ApplicationController
   
   def new
     @job = Job.new
+    
+    @name = current_user[:first_name] + " " + current_user[:last_name]
+    @position = current_user[:position]
+    @company = current_user[:company]
+    @email = current_user[:email]
+    
   end
   
   def create
     Job.create(params[:job])
-    redirect_to members_path
+    redirect_to jobs_path
   end
   
   def index

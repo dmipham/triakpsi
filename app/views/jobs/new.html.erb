@@ -7,7 +7,11 @@
 	<div><%= f.select :industry, ['Industry', 'Accounting', 'Banking/Mortgage', 'Entrepreneurship','Financial Services', 'Human Resources/HR', 'Investment Banking/Venture', 'Investment Management/Hedge Fund/Private Equity','Management Consulting', 'Market Research', 'Marketing/Advertising', 'Public Relations/PR', 'Sales', 'Venture Capital/VC', 'Other' ] %></div>
 	<div><%= f.text_field :location, :placeholder => "City, State" %></div>
 	<div><%= f.text_area :description, :placeholder => "Please describe the position and requirements you're looking for in potential candidates" %></div>
-	<div><%= f.text_field :compensation, :placeholder => "Compensation" %></div>
+	
+	<%= f.hidden_field :contact_name, :value => @name %>
+	<%= f.hidden_field :contact_position, :value => @position %>
+	<%= f.hidden_field :contact_company, :value => @company %>
+	<%= f.hidden_field :contact_email, :value => @email %>
 	
 	<div><%= f.submit "Post Position" %></div>
 	
