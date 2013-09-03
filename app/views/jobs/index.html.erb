@@ -17,15 +17,15 @@
 
 			<% @jobs.reverse.each do |job| %>
 			  <tr>
-			    <td><%= job.position %></td>
-			    <td><%= job.company %></td>
-					<td><%= job.industry %></td>
-					<td><%= job.location %></td>
+			    <td><%= link_to "#{job.position}", job_path(job) %></td>
+			    <td><%= link_to "#{job.company}", job_path(job) %></td>
+					<td><%= link_to "#{job.industry}", job_path(job) %></td>
+					<td><%= link_to "#{job.location}", job_path(job) %></td>
 			    <td><%= link_to 'More Info', job_path(job) %></td>
 			  </tr>
 			<% end %>
 			</table>
-			
+
 		</div>
 	</div>
 </div>

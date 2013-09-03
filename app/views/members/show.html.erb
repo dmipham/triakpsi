@@ -2,14 +2,14 @@
 	<div class="row-fluid">
 
 			<%= render "side_nav" %>
-
+			
 		<div class="span10">
 			<h3><%= @member.first_name+" "+@member.last_name %></h3>
 			
 			<legend>Basic Info</legend>	
 			<p>
 			  <b>Email:</b>
-			  <%= @member.email%>
+			  <%= mail_to "#{@member.email}", @member.email %>
 			</p>
 			
 			<p>
@@ -24,17 +24,17 @@
 			
 			<p>
 			  <b>LinkedIn:</b>
-			  <%= @member.linkedin %>
+			  <%= link_to "#{@member.linkedin}", "http://#{@member.linkedin}", :target => "_blank" %>
 			</p>
 			
 			<p>
 			  <b>Twitter:</b>
-			  <%= @member.twitter%>
+			  <%= link_to "#{@member.twitter}", "http://www.twitter.com/#{@member.twitter}", :target => "_blank" %>
 			</p>
 			
 			<p>
 			  <b>Website:</b>
-			  <%= @member.website%>
+			  <%= link_to "#{@member.website}", "http://#{@member.website}", :target => "_blank" %>
 			</p>
 
 			<legend>School Info</legend>

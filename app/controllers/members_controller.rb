@@ -1,8 +1,9 @@
 class MembersController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   def index
     @members = User.all
-    
   end
   
   def edit
