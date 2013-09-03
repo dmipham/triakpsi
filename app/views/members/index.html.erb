@@ -1,9 +1,7 @@
 <div class="container">
 	<div class="row-fluid">
 
-			<%= render "side_nav" %>
-
-		<div class="span10">
+		<div class="span12">
 			<h3>Members Directory</h3>
 			
 			<table class="table">
@@ -18,7 +16,7 @@
 
 			<% @members.each do |member| %>
 			  <tr>
-			    <td><%= member.first_name %> <%= member.last_name %></td>
+			    <td><%= link_to "#{member.first_name} #{member.last_name}", member_path(member) %></td>
 			    <td><%= member.company %></td>
 				<td><%= member.job_title %></td>
 			    <td><%= member.school %> c/o <%= member.grad_year %></td>

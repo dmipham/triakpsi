@@ -1,34 +1,32 @@
 <div class="container">
 	<div class="row-fluid">
-		
-		<%= render "side_nav" %>
 
-		<div class="span10">
+		<div class="span12">
 			<legend>Position Details</legend>
 			<table>
 				<tr>
 					<td><b>Position:</b></td>
-					<td><%= @job.position %></td>
+					<td style="padding-left: 15px;"><%= @job.position %></td>
 				</tr>
 				<tr>
 					<td><b>Company:</b></td>
-					<td><%= @job.company %></td>
+					<td style="padding-left: 15px;"><%= @job.company %></td>
 				</tr>
 				<tr>
 					<td><b>Industry:</b></td>
-					<td><%= @job.industry %></td>
+					<td style="padding-left: 15px;"><%= @job.industry %></td>
 				</tr>
 				<tr>
 					<td><b>Location:</b></td>
-					<td><%= @job.location %></td>
+					<td style="padding-left: 15px;"><%= @job.location %></td>
 				</tr>
 				<tr>
-					<td><b>Description:</b></td>
-					<td><%= @job.description %></td>
+					<td valign="top"><b>Description:</b></td>
+					<td style="padding-left: 15px;"><%= @job.description %></td>
 				</tr>
 				<tr>
 					<td><b>Posted on:</b></td>
-					<td><%= @job.created_at.strftime("%D") %></td>
+					<td style="padding-left: 15px;"><%= @job.created_at.strftime("%D") %></td>
 				</tr>
 			</table>
 			

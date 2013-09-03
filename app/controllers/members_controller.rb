@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @members = User.all
+    @members = User.all.sort_by { |m| m.first_name}
   end
   
   def edit

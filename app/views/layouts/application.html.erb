@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Triangle AKPsi Demo</title>
+  <title>Triangle AKPsi</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -16,7 +16,8 @@
 		   		<p class="notice"><%= notice %></p>
 		        <p class="alert"><%= alert %></p>	 
 			<%end%>
-		<h1>Triangle AKPsi <small>Serving RTP and surrounding areas</small></h1>
+		<p style="float: left;"><%= link_to image_tag("triakpsiLogo200.png"), root_path %></p>
+		<div class="pull-right"><h1><small>Serving RTP and surrounding areas</small></h1></div>
 		</div>
 	</div>
 	
@@ -29,12 +30,55 @@
 				<li><a href="#">Login</a></li>
 			</ul>
 			</div> -->
+		
+		<script type="text/javascript">
+		$(function(){
+		     $('.dropdown-toggle').dropdown();
+		});
+		</script>
+
+		
 		<% if user_signed_in? %>
+		<div class="pull-left">
+		<ul class="nav nav-pills">
+			
+		  <li class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					 Members <b class="caret"></b>
+		    </a>
+		    	<ul class="dropdown-menu">
+						<li><%= link_to "Directory", members_path %></li>
+						<li><%= link_to "Update Info", edit_member_path(current_user) %></li>		     
+		    </ul>
+		  </li>
+			
+		  <li class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					 Events <b class="caret"></b>
+		    </a>
+		    	<ul class="dropdown-menu">
+						<li><%= link_to "Calendar", calendar_path %></li>
+						<li><%= link_to "View Events", events_path %></li>	
+						<li><%= link_to "Add Event", new_event_path %></li>	     
+		    </ul>
+		  </li>
+			
+		  <li class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					 Job Board <b class="caret"></b>
+		    </a>
+		    	<ul class="dropdown-menu">
+						<li><%= link_to "View Positions", jobs_path %></li>
+						<li><%= link_to "Post Position", new_job_path %></li>    
+		    </ul>
+		  </li>
+			
+		</ul>
+	</div>
+
 			<div class="pull-right">
-				<%= link_to "Members", members_path %> |
-				<%= link_to "Events", events_path %> | 
-				<%= link_to "Job Board", jobs_path %> | 
 				<%= link_to "Log out", destroy_user_session_path, {:method => "DELETE"} %>
+			</div>
 			</div>
 		<%else%>
 			<div class="pull-right">
