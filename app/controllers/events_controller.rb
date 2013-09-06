@@ -6,6 +6,8 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
+    @upcoming_events = Event.where("start_at > ?", Date.today.to_date)
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,6 +46,14 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
+     
+    if @event.host == "Triangle AKPsi" 
+      @event.update_attribute(:color, "#ffcc00")
+    elsif  @event.host == "NCSU"
+      @event.update_attribute(:color, "#e50000")
+    else
+      @event.update_attribute(:color, "#87cefa")
+    end
 
     respond_to do |format|
       if @event.save

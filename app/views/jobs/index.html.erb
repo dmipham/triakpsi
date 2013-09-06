@@ -4,7 +4,7 @@
 		<div class="span12">
 			<h3>Job Board</h3>
 			
-			<table class="table">
+			<table class="table blue">
 			  <tr>
 			    <th>Position</th>
 			    <th>Company</th>
@@ -19,7 +19,7 @@
 			    <td><%= link_to "#{job.company}", job_path(job) %></td>
 					<td><%= link_to "#{job.industry}", job_path(job) %></td>
 					<td><%= link_to "#{job.location}", job_path(job) %></td>
-			    <td><%= link_to 'More Info', job_path(job) %></td>
+			    <td class="gold"><%= link_to 'More Info', job_path(job) %></td>
 			  </tr>
 			<% end %>
 			</table>

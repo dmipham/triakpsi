@@ -13,9 +13,9 @@ class HomeController < ApplicationController
       @birthdays = user.first_name+ " " +user.last_name+ " " +user.birthday.strftime("%m/%d") if user.birthday.month == Date.today.month
     end
     
-    @new_members = User.find(:all, :order => "id desc", :limit => 5)
+    @new_members = User.find(:all, :order => "id desc", :limit => 8)
     
-    @jobs = Job.find(:all, :order => "id desc", :limit => 5)
+    @jobs = Job.find(:all, :order => "id desc", :limit => 6)
     
     Instagram.configure do |config|
       config.client_id = '7060c6e0ad2c45a1866f2bdffa08ed39'

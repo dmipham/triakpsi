@@ -4,7 +4,7 @@
 		<div class="span12">
 			<h3>Members Directory</h3>
 			
-			<table class="table">
+			<table class="table blue">
 			  <tr>
 			    <th>Name</th>
 			    <th>Company</th>
@@ -21,7 +21,7 @@
 				<td><%= member.job_title %></td>
 			    <td><%= member.school %> c/o <%= member.grad_year %></td>
 			    <td><%= member.pledge_semester %> <%= member.pledge_year %></td>
-			    <td><%= link_to 'Contact', member_path(member) %></td>
+			    <td class="gold"><%= link_to 'Contact', member_path(member) %></td>
 			  </tr>
 			<% end %>
 			</table>

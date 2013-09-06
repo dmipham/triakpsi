@@ -24,11 +24,11 @@
 			</p>
   		  	<p>
 				<label>Start Date and Time</label>
-  				<%= f.datetime_select :start_at, :order => [:month, :day, :year, :hour, :minute], :ampm => true, :minute_step => 15 %>
+  				<%= f.datetime_select :start_at, { :order => [:month, :day, :year, :hour, :minute], :ampm => true, :minute_step => 15 }, :style => "width: 125px;" %>
 			</p>
  		   	<p>
 				<label>End Date and Time</label>
-  		   		<%= f.datetime_select :end_at, :order => [:month, :day, :year, :hour, :minute], :ampm => true, :minute_step => 15  %>
+				<%= f.datetime_select :end_at, { :order => [:month, :day, :year, :hour, :minute], :ampm => true, :minute_step => 15 }, :style => "width: 125px;" %>
 			</p>
   		  	<div class="actions">
    			 <%= f.submit "Add Event" %>

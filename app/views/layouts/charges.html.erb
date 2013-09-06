@@ -20,30 +20,6 @@
 			</div>
 		</div>
 	
-		<!-- <div class="navbar">
-			<div class="navbar-inner pull-left">
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="http://localhost:3000/join/">Join</a></li>
-					<li><a href="#">Login</a></li>
-				</ul>
-				</div> -->
-			<% if user_signed_in? %>
-				<div class="pull-right">
-					<%= link_to "Members", members_path %> |
-					<%= link_to "Events", events_path %> | 
-					<%= link_to "Log out", destroy_user_session_path, {:method => "DELETE"} %>
-				</div>
-			<%else%>
-				<div class="pull-right">
-					<%= link_to "Login", new_user_session_path %> | 
-					<%= link_to "Join", new_user_registration_path %>
-				</div>
-			<%end%>
-		<!-- </div> -->
-	</div>
-	
   <%= yield %>
 
 </body>

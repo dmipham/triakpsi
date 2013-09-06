@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: #002244;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -19,14 +19,40 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #ffcc00;
   &:visited {
-    color: #666;
+    color: #999;
+  }
+  &:hover {
+    color: #ffcc00;
+    background-color: #002244;
+  }
+}
+
+.blue {
+	a {
+  color: #002244;
+  &:visited {
+    color: #999;
+  }
+  &:hover {
+    color: #002244;
+    background-color: #ffcc00;
+  }
+}
+}
+
+.gold {
+	a {
+  color: #ffcc00;
+  &:visited {
+    color: #ffcc00;
   }
   &:hover {
     color: #fff;
     background-color: #000;
   }
+}
 }
 
 div {
@@ -66,4 +92,10 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.white-caret
+{
+border-top-color: #fff !important;
+border-bottom-color: #fff !important;
 }

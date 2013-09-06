@@ -14,7 +14,6 @@ module CalendarHelper
       :next_month_text => month_link(@shown_month.next_month) + " >>",
     
       :height => 240
-      
     }
   end
 
