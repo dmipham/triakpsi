@@ -8,6 +8,7 @@
   <tr>
     <th>Name</th>
 	<th>Host</th>
+	<th>Location</th>
     <th>Date</th>
 	<th>Time</th>
     <th></th>
@@ -17,6 +18,7 @@
   <tr>
     <td><%= link_to "#{event.name}", event %></td>
 	<td><%= link_to "#{event.host}", event %></td>
+	<td><%= link_to "#{event.location}", event %></td>
     <td><%= link_to "#{event.start_at.strftime("%a, %-m/%d/%Y")}", event %></td>
 	<td><%= link_to "#{event.start_at.strftime("%l:%M")} - #{event.end_at.strftime("%l:%M %p")}", event %></td>
     <td class ="gold"><%= link_to 'Details', event %></td>

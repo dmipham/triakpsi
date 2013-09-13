@@ -2,6 +2,18 @@
 	
 	<h3>Post New Position</h3>
 	<P>
+		
+		<% if current_user.stripe == nil %>
+		
+		Please pay your membership dues to gain access to this page. <p>
+			<%= form_tag charges_path do %>
+		  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+		          data-key='pk_test_1kKGlAn0QjyrU1CBG8vsVp3u'
+		          data-description="1 Year Membership"
+		          data-plan="dues"></script>
+		<% end %>
+		
+		<% else %>
 	
 	<%= form_for(@job) do |f| %>
 	<div><%= f.text_field :position , :placeholder => "Title of position" %></div>
@@ -21,5 +33,7 @@
 	<% end %>
 	<p><p>
 	<b>Note:</b> All positions are automatically removed after 2 months from the post date.
+	
+	<% end %>
 	
 </div>
