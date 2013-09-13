@@ -20,6 +20,11 @@
 </p>
 
 <p>
+  <b>website:</b>
+  <%= link_to @event.location, "http://#{@event.location}", :target => "_blank" %>
+</p>
+
+<p>
   <b>Date:</b>
   <%= @event.start_at.strftime("%A %b %d, %Y") %>
 </p>
