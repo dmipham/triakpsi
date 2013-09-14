@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
-    @upcoming_events = Event.where("start_at > ?", Date.today.to_date)
+    @upcoming_events = Event.where("start_at > ?", Date.today.to_date).sort_by{ |d| d.start_at }
     
 
     respond_to do |format|
