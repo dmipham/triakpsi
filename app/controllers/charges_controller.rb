@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
   end
   
   def create
-    @upcoming_events = Event.where("start_at > ?", Date.today.to_date).sorty_by{ |d| d.start_at }
+    @upcoming_events = Event.where("start_at > ?", Date.today.to_date).sort_by{ |d| d.start_at }
     @next_event = @upcoming_events.first
 
       require 'mandrill' 
