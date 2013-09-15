@@ -28,9 +28,11 @@
 
 <br />
 
+<% if user_signed_in? %>
 <ul class="nav nav-pills">
 	<li class="gold"><%= link_to 'New Event', new_event_path %></li>
 </ul>
+<% end %>
 
 </div>
 </div>

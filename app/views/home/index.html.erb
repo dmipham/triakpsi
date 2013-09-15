@@ -12,16 +12,24 @@
 					<li>Continued involvement with local student chapters</li>
 				</ul>
 				We welcome all new members and would love to see you at our next event!
-				<p></P><center>
+				<p></P><center class="gold">
 					<a href="http://www.twitter.com/triangleakpsi", target="_blank">Twitter</a> | <a href="http://www.facebook.com/triangleakpsi", target="_blank">Facebook</a> | <a href="http://www.linkedin.com/groups/Triangle-AKPsi-4001716?gid=4001716&mostPopular=&trk=tyah", target="_blank">LinkedIn</a> | <a href="http://www.instagram.com/triangleakpsi", target="_blank">Instagram</a>
 				</center>
 		</div>
 	
 		<div class="span4" style="border-radius:25px; height:300px; background-color:#fff;">
 
-			<center><h4>Upcoming Events</h4></center>
+			<center><h4 class="gold"><%= link_to "Upcoming Events", events_path %></h4></center>
 
 			<%= raw(event_calendar) %>
+			<table>
+				<tr>
+					<td width="30px"><small><strong>Key: </strong></small></td>
+					<td width="125px"><li type="square" style="color: #ffcc00"><small>Triangle Alumni</small></li></td>
+					<td width="60px"><li type="square" style="color: #87cefa"><small>UNC</small></li></td>
+					<td width="50px"><li type="square" style="color: #e50000"><small>NCSU</small></li></td>
+				</tr>
+			</table>
 		</div>
 	
 	</div>
@@ -59,7 +67,7 @@
 		<div class="span4">
 			<center><h4>AKΨ is Hiring!</h4></center>
 				<% @jobs.each do |job| %>
-				<ul><b><%= link_to "#{job.position rescue "n/a"}", job_path(job) %></b> in <%= job.location %></ul>
+				<ul class="gold"><b><%= link_to "#{job.position rescue "n/a"}", job_path(job) %></b> in <%= job.location %></ul>
 				<% end %>
 					<ul class="nav nav-pills" style="padding:20px">
 						<li class="gold"><%= link_to "Post Position", new_job_path %></li>
@@ -69,7 +77,7 @@
 		<div class="span4">
 			<center><h4>Welcome New Members:</h4></center>
 			<% @new_members.each do |user| %>
-			<ul><%= link_to "#{user.first_name} #{user.last_name}", member_path(user)%> <%= user.school+" c/o "+user.grad_year.to_s %></ul>
+			<ul class="gold"><%= link_to "#{user.first_name} #{user.last_name}", member_path(user)%> <%= user.school+" c/o "+user.grad_year.to_s %></ul>
 			<%end%>
 		</div>
 		
