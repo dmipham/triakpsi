@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923202237) do
+ActiveRecord::Schema.define(:version => 20130923214713) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(:version => 20130923202237) do
     t.string   "members"
     t.string   "new_members"
     t.time     "start"
-    t.string   "notes"
+    t.text     "notes",        :limit => 255
     t.datetime "next_meeting"
     t.string   "location"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "name"
   end
 
