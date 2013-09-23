@@ -25,12 +25,7 @@
 			
 			<p>
 			  <b>Phone:</b>
-			  <%= @member.phone %>
-			</p>
-			
-			<p>
-			  <b>Birthday:</b>
-			  <%= @member.birthday.strftime("%b %-d, %Y") %>
+			  <%= number_to_phone(@member.phone.to_i, :area_code => true) %>
 			</p>
 			
 			<p>

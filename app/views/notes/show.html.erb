@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="row-fluid">
+
+		<div class="span12">
+			<h3><%= @note.created_at.strftime("%B %Y")%></h3>
+			
+			<% if current_user.stripe == nil %>
+		
+			Please pay your yearly membership dues of $25 to gain access to this page. <p>
+				<%= form_tag charges_path do %>
+			  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+			          data-key='pk_test_1kKGlAn0QjyrU1CBG8vsVp3u'
+			          data-description="1 Year Membership"
+			          data-plan="dues"></script>
+			<% end %>
+		
+			<% else %>
+			
+			<legend>Attendance</legend>
+			<table>
+				<tr>
+					<td><b>Board Members:</b></td>
+					<td style="padding-left: 15px;"><%= @note.board %></td>
+				</tr>
+				<tr>
+					<td><b>Members:</b></td>
+					<td style="padding-left: 15px;"><%= @note.members %></td>
+				</tr>
+				<tr>
+					<td><b>New Members:</b></td>
+					<td style="padding-left: 15px;"><%= @note.new_members %></td>
+				</tr>
+			</table>
+			<legend>Notes</legend>
+			<table>
+				<tr>
+					<td><b>Start Time:</b></td>
+					<td style="padding-left: 15px;"><%= @note.start.strftime("%l:%M %P") %></td>
+				</tr>
+				<tr><td height="5px"></td></tr>
+				<tr>
+					<td valign="top"><b>Notes:</b></td>
+					<td style="padding-left: 15px;"><%= @note.notes.html_safe %></td>
+				</tr>
+				<tr><td height="5px"></td></tr>
+				<tr>
+					<td><b>Next Meeting:</b></td>
+					<td style="padding-left: 15px;"><%= @note.next_meeting.strftime("%A %b %d, %Y at %l:%M %P") %> at <%= @note.location %></td>
+				</tr>
+				<tr><td height="5px"></td></tr>
+				<tr>
+					<td><b>Meeting Adjourned:</b></td>
+					<td style="padding-left: 15px;"><%= @note.created_at.strftime("%l:%M %P") %></td>
+				</tr>				
+				<tr>
+			</table>
+			<br>
+			Minutes submitted by <%= @note.name %>
+			
+			<% end %>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  board: MyString
+  members: MyString
+  new_members: MyString
+  start: 2013-09-22 13:48:38
+  notes: MyString
+  next_meeting: 2013-09-22 13:48:38
+  location: MyString
+
+two:
+  board: MyString
+  members: MyString
+  new_members: MyString
+  start: 2013-09-22 13:48:38
+  notes: MyString
+  next_meeting: 2013-09-22 13:48:38
+  location: MyString

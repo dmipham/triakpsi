@@ -1,0 +1,40 @@
+<div class="container">
+	
+	<h3>New Meeting Minutes</h3>
+	<P>
+		
+		<% if current_user.stripe == nil %>
+		
+		Please pay your yearly membership dues of $25 to gain access to this page. <p>
+			<%= form_tag charges_path do %>
+		  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+		          data-key='pk_test_1kKGlAn0QjyrU1CBG8vsVp3u'
+		          data-description="1 Year Membership"
+		          data-plan="dues"></script>
+		<% end %>
+		
+		<% else %>
+			<% if current_user.admin? %>
+	
+				<%= form_for(@notes) do |f| %>
+					<div><label>Start Time</label><%= f.time_select :start, { :ampm => true }, :style => "width: 125px;" %>
+					<legend>Attendance</legend>
+					<div><%= f.text_field :board , :placeholder => "Board Members" %></div>
+					<div><%= f.text_field :members, :placeholder => "Members" %></div>
+					<div><%= f.text_field :new_members, :placeholder => "New Members" %></div>
+					<legend>Notes</legend>
+					<div><%= f.text_area :notes, :placeholder => "Add notes here" %></div>
+					<legend>Next Meeting</legend>
+					<div><%= f.datetime_select :next_meeting, { :order => [:month, :day, :year, :hour, :minute], :ampm => true, :minute_step => 15 }, :style => "width: 125px;" %></div>
+					<div><%= f.text_field :location, :placeholder => "Location" %></div>
+					<div><%= f.hidden_field :name, :value => current_user.first_name + " " + current_user.last_name %>
+	
+					<div><%= f.submit "Add Minutes" %></div>
+			
+				<% end %>
+				
+			<% end %>
+	
+	<% end %>
+	
+</div>

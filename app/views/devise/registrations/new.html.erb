@@ -21,8 +21,9 @@
 				
 				<p><%= f.phone_field :phone , :placeholder => "Phone" %>
 					<%= f.text_field :linkedin , :placeholder => "LinkedIn Address" %></p>
-				<p><%= f.text_field :twitter , :placeholder => "Twitter Handle" %>
-				<%= f.text_field :website , :placeholder => "Website" %></p>
+				<p><div class="input-prepend">
+  <span class="add-on">@</span><%= f.text_field :twitter , :placeholder => "Twitter Handle" %></span></div>
+				<%= f.text_field :website , :placeholder => "www.YourPersonalWebsite.com" %></p>
 			<p><label>Birthday</label><%= f.date_select :birthday, :order => [:month, :day, :year], :start_year => 1900 %></p>
 		<legend>School Info</legend>
 			<p><label>Please specify your school and graduation year.</label>
