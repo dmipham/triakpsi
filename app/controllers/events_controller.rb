@@ -4,6 +4,23 @@ class EventsController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index, :show]
   
+  require 'icalendar'
+  
+  def export_events
+      @event = Event.find(params[:id])
+      @calendar = Icalendar::Calendar.new
+      event = Icalendar::Event.new
+      event.start = @event.start_at.strftime("%Y%m%dT%H%M%S")
+      event.end = @event.end_at.strftime("%Y%m%dT%H%M%S")
+      event.summary = @event.name
+      event.description = @event.description
+      event.location = @event.location
+      @calendar.add event
+      @calendar.publish
+      headers['Content-Type'] = "text/calendar; charset=UTF-8"
+      render_without_layout :text => @calendar.to_ical
+    end
+  
   def index
     @events = Event.all
     @upcoming_events = Event.where("start_at > ?", Date.today.to_date).sort_by{ |d| d.start_at }
@@ -23,7 +40,14 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
+      format.ics do
+        calendar = Icalendar::Calendar.new
+        calendar.add_event(@event.to_ics)
+        calendar.publish
+        render :text => calendar.to_ical
+      end
     end
+    
   end
 
   # GET /events/new

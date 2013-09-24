@@ -39,6 +39,11 @@
 	<%= @event.description %>
 </p>
 
+<button class="btn btn-warning blue">
+	<%= link_to "Add to Calendar", :controller => 'events', :action => :show, :format => :ics %>
+</button>
+<br>
+<br>
 
 <%= link_to 'Edit', edit_event_path(@event) if user_signed_in? %> |
 <%= link_to 'Back', events_path %>

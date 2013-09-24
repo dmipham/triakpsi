@@ -38,6 +38,8 @@ gem 'instagram'
 
 gem 'mandrill-api'
 
+gem 'icalendar'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
