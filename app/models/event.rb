@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
     event.start = self.start_at.strftime("%Y%m%dT%H%M%S")
     event.end = self.end_at.strftime("%Y%m%dT%H%M%S")
     event.summary = self.name
-    event.description = self.description
+    event.description = self.host + " Event: " +self.description
     event.location = self.location
     event.uid = event.url = self.link
     event.klass = "PUBLIC"

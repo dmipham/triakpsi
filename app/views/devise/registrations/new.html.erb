@@ -5,6 +5,31 @@
 			
 			<h2>Become a member!</h2>
 
+			<b>Note: </b>If the form is not rendering properly, please update to a recent version of Internet Explorer or download an alternate browser. If you need an alternative, download <b><a href="https://www.google.com/intl/en/chrome/browser/index.html#eula" target="_blank">Google Chrome</a></b> for free <a href="https://www.google.com/intl/en/chrome/browser/index.html#eula" target="_blank">here</a>.
+			
+		<script type="text/javascript">
+			$('[placeholder]').focus(function() {
+			  var input = $(this);
+			  if (input.val() == input.attr('placeholder')) {
+			    input.val('');
+			    input.removeClass('placeholder');
+			  }
+			}).blur(function() {
+			  var input = $(this);
+			  if (input.val() == '' || input.val() == input.attr('placeholder')) {
+			    input.addClass('placeholder');
+			    input.val(input.attr('placeholder'));
+			  }
+			}).blur().parents('form').submit(function() {
+			  $(this).find('[placeholder]').each(function() {
+			    var input = $(this);
+			    if (input.val() == input.attr('placeholder')) {
+			      input.val('');
+			    }
+			  })
+			});
+			</script>
+			
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			<%= devise_error_messages! %>
 			
