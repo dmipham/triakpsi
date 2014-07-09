@@ -18,7 +18,7 @@ class ChargesController < ApplicationController
 	<br/>
 	Thank you for your support and membership to our Alumni chapter!<br/>
 	<br/>
-	We have a lot of great things planned for you this coming year. Don't forget to come to our #{@next_event.summary} at #{@next_event.location} on Thursday #{@next_event.start_at.strftime("%b %d at %l:%M %p")}. It's always a great opportunity to meet new Brothers in the area.<br/>
+	We have a lot of great things planned for you this coming year. We hope to see you at them! It's always a great opportunity to meet new Brothers in the area.<br/>
 	<br/>
 	Some important information about your membership:</div>
 <ul>
