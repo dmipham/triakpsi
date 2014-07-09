@@ -7,7 +7,7 @@
   </article>
 	<p>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key='pk_test_1kKGlAn0QjyrU1CBG8vsVp3u'
+          data-key= ENV['STRIPE_SECRET']
           data-description="1 Year Membership"
           data-plan="dues"></script>
 <% end %>
