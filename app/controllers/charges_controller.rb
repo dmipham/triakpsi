@@ -43,7 +43,7 @@ Please let us know if you have any questions or comments.<p> In U... & I... <p>T
     
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here https://manage.stripe.com/account
-    Stripe.api_key = STRIPE_SECRET
+    Stripe.api_key = ENV[STRIPE_SECRET]
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
